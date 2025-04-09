@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import styles from './Login.module.css';
 import { useDispatch } from 'react-redux';
+import { authActions } from '../store/auth';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -10,8 +11,7 @@ const Login = () => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    // 🔐 Optional: Dispatch login action or call Firebase
-    // dispatch(authActions.login());
+    dispatch(authActions.login());
 
     console.log(emailRef.current.value);
     console.log(passwordRef.current.value);
